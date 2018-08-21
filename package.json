@@ -1,0 +1,16 @@
+{
+  "name": "podsumowanie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run sass",
+    "sass": "node-sass -w styles/sass/ -o styles/css/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.3"
+  }
+}
