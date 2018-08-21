@@ -6,7 +6,7 @@
         -webkit-user-select: none;
         -ms-user-select: none;
     }
-    margin: 50px;
+    margin: 100px;
     display: inline-flex;
     flex-direction: column;
     position: relative;
@@ -33,6 +33,11 @@
         position: absolute;
         top: -16px;
     }
+
+    .hidden {
+        display: none;
+    }
+
     .pc {
         animation-name: pc;
         animation-duration: 400ms;
