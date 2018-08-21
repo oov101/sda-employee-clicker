@@ -17,10 +17,6 @@ class EmployeeClicker {
     }
     
     click() {
-        if(!this.score) {
-            this.startAnimationWithFramePer(100);
-        }
-
         this.score++;
         this.updateScore();
         this.playAudio('click');
@@ -28,30 +24,6 @@ class EmployeeClicker {
 
     updateScore() {
         this.scoreContainer.innerText = this.score;
-    }
-
-    startAnimationWithFramePer(milliseconds) {
-
-
-        setInterval(() => {
-            for(let i = 0; i < 5; i++) {
-                ((i) => {
-                    setTimeout(() => {
-                        this.monitor.setAttribute('src', `./assets/sprites/monitor/monitor${i}.png`);
-                    }, milliseconds*i);
-                })(i);
-            }
-        }, milliseconds*4);
-
-        setInterval(() => {
-            for(let i = 0; i < 4; i++) {
-                ((i) => {
-                    setTimeout(() => {
-                        this.pc.setAttribute('src', `./assets/sprites/pc/pc${i}.png`);
-                    }, milliseconds*i);
-                })(i);
-            }
-        }, milliseconds*3);
     }
 
     playAudio(name) {
