@@ -27,6 +27,9 @@
     position: absolute;
     top: -16px; }
   .map .pc {
+    animation-name: pc;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
     position: absolute;
     top: -14px;
     left: -43px; }
@@ -128,3 +131,15 @@
     background-image: url("../../assets/sprites/monitor/monitor4.png"); }
   100% {
     background-image: url("../../assets/sprites/monitor/monitor0.png"); } }
+
+@keyframes pc {
+  0% {
+    background-image: url("../../assets/sprites/pc/pc0.png"); }
+  25% {
+    background-image: url("../../assets/sprites/pc/pc1.png"); }
+  50% {
+    background-image: url("../../assets/sprites/pc/pc2.png"); }
+  75% {
+    background-image: url("../../assets/sprites/pc/pc3.png"); }
+  100% {
+    background-image: url("../../assets/sprites/pc/pc0.png"); } }
