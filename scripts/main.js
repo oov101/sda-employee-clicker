@@ -52,6 +52,7 @@ class EmployeeClicker {
                 })(i);
             }
         }, milliseconds*3);
+    }
 
     playAudio(name) {
         const audioTag = `<audio autoplay src='assets/${name}.mp3'></audio>`;
