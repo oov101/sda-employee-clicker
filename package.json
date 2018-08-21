@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run sass",
+    "start": "npm run sass | reload -b",
     "sass": "node-sass -w styles/sass/ -o styles/css/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.9.3",
+    "reload": "^2.3.1"
   }
 }
