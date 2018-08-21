@@ -53,6 +53,9 @@
     z-index: 2; }
   .map .employee {
     position: absolute;
+    animation-name: employee;
+    animation-duration: 600ms;
+    animation-iteration-count: infinite;
     top: -80px;
     left: 61px;
     z-index: 3;
@@ -94,3 +97,17 @@
       transform: rotate(180deg); }
     .map div .flip-angle-minus-90 img {
       transform: rotate(-90deg); }
+
+@keyframes employee {
+  0% {
+    background-image: url("../../assets/sprites/employee/employee20.png"); }
+  20% {
+    background-image: url("../../assets/sprites/employee/employee21.png"); }
+  40% {
+    background-image: url("../../assets/sprites/employee/employee22.png"); }
+  60% {
+    background-image: url("../../assets/sprites/employee/employee23.png"); }
+  80% {
+    background-image: url("../../assets/sprites/employee/employee24.png"); }
+  100% {
+    background-image: url("../../assets/sprites/employee/employee25.png"); } }
