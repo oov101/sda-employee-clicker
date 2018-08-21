@@ -32,25 +32,6 @@ class EmployeeClicker {
 
     startAnimationWithFramePer(milliseconds) {
 
-        setInterval(() => {
-            for(let i = 0; i < 4; i++) {
-                ((i) => {
-                    setTimeout(() => {
-                        this.pc.setAttribute('src', `./assets/sprites/pc/pc${i}.png`);
-                    }, milliseconds*i);
-                })(i);
-            }
-        }, milliseconds*3);
-
-        setInterval(() => {
-            for(let i = 0; i < 5; i++) {
-                ((i) => {
-                    setTimeout(() => {
-                        this.coffee.setAttribute('src', `./assets/sprites/coffee/coffee${i}.png`);
-                    }, (milliseconds + 100) * i);
-                })(i);
-            }
-        }, (milliseconds + 100) * 4);
     }
 
     playAudio(name) {
