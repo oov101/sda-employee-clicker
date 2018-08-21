@@ -6,92 +6,79 @@
         -webkit-user-select: none;
         -ms-user-select: none;
     }
-
     margin: 50px;
     display: inline-flex;
     flex-direction: column;
     position: relative;
-
     .row-1 {
         position: absolute;
         top: -84px;
     }
-
     .row-6 {
         position: absolute;
         bottom: -84px;
     }
-
     .field-1 {
         position: absolute;
         left: -84px;
     }
-
     .field-6 {
         position: absolute;
         right: -84px;
     }
-
     .row-5 .field-6 {
         z-index: 1;
     }
-
     .pc-table {
         position: absolute;
         top: -16px;
     }
-
     .pc {
         position: absolute;
         top: -14px;
         left: -43px;
     }
-
     .monitor {
         position: absolute;
         top: -20px;
         left: 20px;
         transform: rotate(45deg);
     }
-
     .keyboard {
         position: absolute;
         top: 9px;
         left: -59px;
         transform: rotate(5deg);
     }
-
     .chair {
         position: absolute;
         top: -71px;
         left: 60px;
         transform: rotate(5deg);
-        z-index: 1; 
-    }
-    
-    // chairfix
+        z-index: 1;
+    } // chairfix
     .pc-table,
     .keyboard,
     .pc,
     .monitor {
         z-index: 2;
     }
-
     .employee {
         position: absolute;
+        animation-name: employee;
+        animation-duration: 600ms;
+        animation-iteration-count: infinite;
         top: -80px;
         left: 61px;
         z-index: 3;
         transform: rotate(5deg);
     }
-
     .refrigerator {
         position: absolute;
         top: 8px;
         left: -16px;
         transform: rotate(-90deg);
     }
-
     .coffee-pizza-table {
         position: absolute;
         top: 15px;
@@ -99,7 +86,6 @@
         transform: rotate(90deg);
         z-index: 1;
     }
-
     .coffee {
         position: absolute;
         top: -32px;
@@ -107,7 +93,6 @@
         z-index: 1;
         transform: scale(0.5);
     }
-
     .pizza {
         position: absolute;
         top: 32px;
@@ -115,10 +100,8 @@
         z-index: 1;
         transform: scale(0.7) rotate(-20deg);
     }
-
     div {
         display: flex;
-
         div {
             display: inline-block;
             width: 128px;
@@ -126,23 +109,41 @@
             flex-shrink: 0;
             position: relative;
         }
-
         .flip-angle-90 {
             img {
                 transform: rotate(90deg);
             }
         }
-
         .flip-angle-180 {
             img {
                 transform: rotate(180deg);
             }
         }
-
         .flip-angle-minus-90 {
             img {
                 transform: rotate(-90deg);
             }
         }
+    }
+}
+
+@keyframes employee {
+    0% {
+        background-image: url('../../assets/sprites/employee/employee20.png');
+    }
+    20% {
+        background-image: url('../../assets/sprites/employee/employee21.png');
+    }
+    40% {
+        background-image: url('../../assets/sprites/employee/employee22.png');
+    }
+    60% {
+        background-image: url('../../assets/sprites/employee/employee23.png');
+    }
+    80% {
+        background-image: url('../../assets/sprites/employee/employee24.png');
+    }
+    100% {
+        background-image: url('../../assets/sprites/employee/employee25.png');
     }
 }

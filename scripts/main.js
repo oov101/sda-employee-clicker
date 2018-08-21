@@ -18,7 +18,6 @@ class EmployeeClicker {
     
     click() {
         if(!this.score) {
-            this.clearSingleAudioNodeEvery(5000);
             this.startAnimationWithFramePer(100);
         }
 
@@ -32,15 +31,7 @@ class EmployeeClicker {
     }
 
     startAnimationWithFramePer(milliseconds) {
-        setInterval(() => {
-            for(let i = 0; i < 6; i++) {
-                ((i) => {
-                    setTimeout(() => {
-                        this.employee.setAttribute('src', `./assets/sprites/employee/employee2${i}.png`);
-                    }, milliseconds*i);
-                })(i);
-            }
-        }, milliseconds*5);
+
 
         setInterval(() => {
             for(let i = 0; i < 5; i++) {
@@ -78,12 +69,9 @@ class EmployeeClicker {
         const div=  document.createElement('div');
         div.innerHTML = audioTag;
         document.getElementById('singleAudio').appendChild(div);
-    }
-
-    clearSingleAudioNodeEvery(milliseconds) {
-        setInterval(()=> {
-            document.getElementById('singleAudio').innerHTML = " ";
-        }, milliseconds);
+        setTimeout(()=> {
+            document.getElementById('singleAudio').removeChild(div);
+        }, 1000)
     }
 }
 
