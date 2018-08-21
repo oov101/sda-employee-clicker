@@ -1,3 +1,22 @@
+class Employee {
+    constructor(element, game) {
+        this.game = game;
+        this.element = element;
+        this.element.addEventListener('click', () => {
+            this.click();
+        });
+        setInterval(() => {
+            this.game.addToScore(10);
+        }, 5000);
+    }
+    
+    click() {
+        this.game.addToScore(1);
+        this.game.playAudio('employeeClick');
+    }
+    
+}
+
 class EmployeeClicker {
     constructor() {
         this.score = 0;
@@ -5,21 +24,18 @@ class EmployeeClicker {
     }
 
     init() {
-        this.employee = document.getElementsByClassName('employee')[0];
+        const employeeDiv = document.getElementsByClassName('employee')[0]
+        new Employee(employeeDiv, this);
         this.monitor = document.getElementsByClassName('monitor')[0];
         this.pc = document.getElementsByClassName('pc')[0];
         this.coffee = document.getElementsByClassName('coffee')[0];
-        this.employee.addEventListener('click', () => {
-            this.click();
-        });
         this.scoreContainer = document.getElementsByClassName('score')[0];
         this.updateScore();
     }
     
-    click() {
-        this.score++;
+    addToScore(points) {
+        this.score += points;
         this.updateScore();
-        this.playAudio('click');
     }
 
     updateScore() {
