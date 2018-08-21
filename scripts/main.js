@@ -53,17 +53,6 @@ class EmployeeClicker {
             }
         }, milliseconds*3);
 
-        setInterval(() => {
-            for(let i = 0; i < 5; i++) {
-                ((i) => {
-                    setTimeout(() => {
-                        this.coffee.setAttribute('src', `./assets/sprites/coffee/coffee${i}.png`);
-                    }, (milliseconds + 100) * i);
-                })(i);
-            }
-        }, (milliseconds + 100) * 4);
-    }
-
     playAudio(name) {
         const audioTag = `<audio autoplay src='assets/${name}.mp3'></audio>`;
         const div=  document.createElement('div');
