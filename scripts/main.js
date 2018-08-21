@@ -32,17 +32,6 @@ class EmployeeClicker {
 
     startAnimationWithFramePer(milliseconds) {
 
-
-        setInterval(() => {
-            for(let i = 0; i < 5; i++) {
-                ((i) => {
-                    setTimeout(() => {
-                        this.monitor.setAttribute('src', `./assets/sprites/monitor/monitor${i}.png`);
-                    }, milliseconds*i);
-                })(i);
-            }
-        }, milliseconds*4);
-
         setInterval(() => {
             for(let i = 0; i < 4; i++) {
                 ((i) => {
