@@ -94,6 +94,10 @@
     }
     .coffee {
         position: absolute;
+        animation-name: coffee;
+        animation-duration: 1000ms;
+        animation-iteration-count: infinite;
+        position: absolute;
         top: -32px;
         left: -15px;
         z-index: 1;
@@ -151,6 +155,28 @@
     }
     100% {
         background-image: url('../../assets/sprites/employee/employee25.png');
+    }
+}
+
+@keyframes coffee {
+    0% {
+        background-image: url('../../assets/sprites/coffee/coffee0.png');
+    }
+
+    30% {
+        background-image: url('../../assets/sprites/coffee/coffee1.png');
+    }
+
+    50% {
+        background-image: url('../../assets/sprites/coffee/coffee2.png');
+    }
+
+    70% {
+        background-image: url('../../assets/sprites/coffee/coffee3.png');
+    }
+
+    100% {
+        background-image: url('../../assets/sprites/coffee/coffee4.png');
     }
 }
 

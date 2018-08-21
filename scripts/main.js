@@ -17,10 +17,6 @@ class EmployeeClicker {
     }
     
     click() {
-        if(!this.score) {
-            this.startAnimationWithFramePer(100);
-        }
-
         this.score++;
         this.updateScore();
         this.playAudio('click');
@@ -28,10 +24,6 @@ class EmployeeClicker {
 
     updateScore() {
         this.scoreContainer.innerText = this.score;
-    }
-
-    startAnimationWithFramePer(milliseconds) {
-
     }
 
     playAudio(name) {
