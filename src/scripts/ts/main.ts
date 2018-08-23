@@ -66,7 +66,7 @@ class EmployeeClicker {
     }
 
     playAudio(name) {
-        const audioTag = `<audio autoplay src='assets/${name}.mp3'></audio>`;
+        const audioTag = `<audio autoplay src='public/assets/${name}.mp3'></audio>`;
         const div=  document.createElement('div');
         div.innerHTML = audioTag;
         document.getElementById('singleAudio').appendChild(div);
