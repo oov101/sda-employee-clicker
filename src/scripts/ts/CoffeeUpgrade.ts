@@ -1,6 +1,6 @@
-import EmployeeClicker from 'EmployeeClicker';
+import { EmployeeClicker } from 'EmployeeClicker';
 
-class CoffeeUpgrade {
+export class CoffeeUpgrade {
     game: EmployeeClicker;
     coffeeDiv: Element;
 
@@ -36,5 +36,3 @@ class CoffeeUpgrade {
         this.game.addToScore(-120);
     }
 }
-
-export default CoffeeUpgrade;

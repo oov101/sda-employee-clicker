@@ -1,6 +1,6 @@
-import EmployeeClicker from 'EmployeeClicker';
+import { EmployeeClicker } from 'EmployeeClicker';
 
-class Employee {
+export class Employee {
     game: EmployeeClicker;
     intervalTime: number;
     element: Element;
@@ -34,5 +34,3 @@ class Employee {
         }, this.intervalTime);
     }
 }
-
-export default Employee;

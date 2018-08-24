@@ -1,63 +1,61 @@
-import Employee from 'Employee';
-import CoffeeUpgrade from 'CoffeeUpgrade';
+import { Employee } from 'Employee';
+import { CoffeeUpgrade } from 'CoffeeUpgrade';
 
-class EmployeeClicker {
-  score: number;
-  scoreListeners: Function[];
-  employees: Employee[];
-  monitor!: Element;
-  pc!: Element;
-  coffee!: Element;
-  scoreContainer!: Element;
-  singleAudioContainer!: Element;
-  
-  constructor() {
-      this.score = 0;
-      this.scoreListeners = [];
-      this.employees = [];
-      this.init();
-  }
+export class EmployeeClicker {
+    score: number;
+    scoreListeners: Function[];
+    employees: Employee[];
+    monitor!: Element;
+    pc!: Element;
+    coffee!: Element;
+    scoreContainer!: Element;
+    singleAudioContainer!: Element;
 
-  init() {
-      const employeeDiv = document.getElementsByClassName('employee')[0]
-      this.employees = [new Employee(employeeDiv, this)];
-      this.monitor = document.getElementsByClassName('monitor')[0];
-      this.pc = document.getElementsByClassName('pc')[0];
-      this.coffee = document.getElementsByClassName('coffee')[0];
-      this.scoreContainer = document.getElementsByClassName('score')[0];
-      this.singleAudioContainer = document.getElementById('singleAudio')!;
-      this.updateScore();
-      this.initUpgrades();
-  }
+    constructor() {
+        this.score = 0;
+        this.scoreListeners = [];
+        this.employees = [];
+        this.init();
+    }
 
-  initUpgrades() {
-      const coffeeUpgrade = new CoffeeUpgrade(this);
-  }
+    init() {
+        const employeeDiv = document.getElementsByClassName('employee')[0]
+        this.employees = [new Employee(employeeDiv, this)];
+        this.monitor = document.getElementsByClassName('monitor')[0];
+        this.pc = document.getElementsByClassName('pc')[0];
+        this.coffee = document.getElementsByClassName('coffee')[0];
+        this.scoreContainer = document.getElementsByClassName('score')[0];
+        this.singleAudioContainer = document.getElementById('singleAudio')!;
+        this.updateScore();
+        this.initUpgrades();
+    }
 
-  addToScore(points: number) {
-      this.score += points;
-      this.updateScore();
-  }
+    initUpgrades() {
+        const coffeeUpgrade = new CoffeeUpgrade(this);
+    }
 
-  addScoreListener(listener: Function) {
-      this.scoreListeners.push(listener);
-  }
+    addToScore(points: number) {
+        this.score += points;
+        this.updateScore();
+    }
 
-  updateScore() {
-      this.scoreListeners.forEach(listener => listener(this.score));
-      // @ts-ignore: Property ‘innerText’ does not exist on type ‘Element’ (TypeScript bug).
-      this.scoreContainer.innerText = this.score;
-  }
+    addScoreListener(listener: Function) {
+        this.scoreListeners.push(listener);
+    }
 
-  playAudio(name: string) {
-      const audioTag = `<audio autoplay src='public/assets/${name}.mp3'></audio>`;
-      const div = document.createElement('div');
-      div.innerHTML = audioTag;
-      this.singleAudioContainer.appendChild(div);
-      setTimeout(()=> {
-          this.singleAudioContainer.removeChild(div);
-      }, 1000)
-  }
+    updateScore() {
+        this.scoreListeners.forEach(listener => listener(this.score));
+        // @ts-ignore: Property ‘innerText’ does not exist on type ‘Element’ (TypeScript bug).
+        this.scoreContainer.innerText = this.score;
+    }
+
+    playAudio(name: string) {
+        const audioTag = `<audio autoplay src='public/assets/${name}.mp3'></audio>`;
+        const div = document.createElement('div');
+        div.innerHTML = audioTag;
+        this.singleAudioContainer.appendChild(div);
+        setTimeout(() => {
+            this.singleAudioContainer.removeChild(div);
+        }, 1000)
+    }
 }
-
-export default EmployeeClicker;

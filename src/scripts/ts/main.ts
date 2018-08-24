@@ -1,3 +1,3 @@
-import EmployeeClicker from 'EmployeeClicker';
+import { EmployeeClicker } from 'EmployeeClicker';
 
 new EmployeeClicker();
