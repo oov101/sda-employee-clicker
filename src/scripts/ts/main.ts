@@ -1,5 +1,10 @@
 class Employee {
-    constructor(element, game) {
+    game: EmployeeClicker;
+    intervalTime: number;
+    element: Element;
+    intervalId: any;
+    
+    constructor(element: Element, game: EmployeeClicker) {
         this.game = game;
         this.intervalTime = 5000;
         this.element = element;
@@ -29,6 +34,15 @@ class Employee {
 }
 
 class EmployeeClicker {
+    score: number;
+    scoreListeners: Function[];
+    employees: Employee[];
+    monitor!: Element;
+    pc!: Element;
+    coffee!: Element;
+    scoreContainer!: Element;
+    singleAudioContainer!: Element;
+    
     constructor() {
         this.score = 0;
         this.scoreListeners = [];
@@ -43,6 +57,7 @@ class EmployeeClicker {
         this.pc = document.getElementsByClassName('pc')[0];
         this.coffee = document.getElementsByClassName('coffee')[0];
         this.scoreContainer = document.getElementsByClassName('score')[0];
+        this.singleAudioContainer = document.getElementById('singleAudio')!;
         this.updateScore();
         this.initUpgrades();
     }
@@ -51,36 +66,40 @@ class EmployeeClicker {
         const coffeeUpgrade = new CoffeeUpgrade(this);
     }
 
-    addToScore(points) {
+    addToScore(points: number) {
         this.score += points;
         this.updateScore();
     }
 
-    addScoreListener(listener) {
+    addScoreListener(listener: Function) {
         this.scoreListeners.push(listener);
     }
 
     updateScore() {
         this.scoreListeners.forEach(listener => listener(this.score));
+        // @ts-ignore: Property ‘innerText’ does not exist on type ‘Element’ (TypeScript bug).
         this.scoreContainer.innerText = this.score;
     }
 
-    playAudio(name) {
+    playAudio(name: string) {
         const audioTag = `<audio autoplay src='public/assets/${name}.mp3'></audio>`;
-        const div=  document.createElement('div');
+        const div = document.createElement('div');
         div.innerHTML = audioTag;
-        document.getElementById('singleAudio').appendChild(div);
+        this.singleAudioContainer.appendChild(div);
         setTimeout(()=> {
-            document.getElementById('singleAudio').removeChild(div);
+            this.singleAudioContainer.removeChild(div);
         }, 1000)
     }
 }
 
 class CoffeeUpgrade {
-    constructor(game) {
+    game: EmployeeClicker;
+    coffeeDiv: Element;
+
+    constructor(game: EmployeeClicker) {
         this.game = game;
         this.coffeeDiv = document.getElementsByClassName('coffee')[0];
-        this.game.addScoreListener((score) => {
+        this.game.addScoreListener((score: number) => {
             if(score % 50 === 0) {
                 const div = document.createElement('div');
                 const button = `<button class="coffee-upgrade">Coffe Upgrade</button>`;
@@ -88,8 +107,8 @@ class CoffeeUpgrade {
                 div.addEventListener('click', () => {
                     this.runUpgrade();
                     document
-                      .getElementsByClassName("panel")[0]
-                      .removeChild(div);
+                        .getElementsByClassName("panel")[0]
+                        .removeChild(div);
                 });
                 document.getElementsByClassName('panel')[0].appendChild(div);
             }
