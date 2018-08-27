@@ -1,13 +1,7 @@
 @import 'partials/animations';
+@import 'partials/atlas';
 
 .map {
-    img {
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-    }
     margin: 100px;
     display: inline-flex;
     flex-direction: column;
@@ -41,17 +35,13 @@
     }
 
     .pc {
-        animation-name: pc;
-        animation-duration: 400ms;
-        animation-iteration-count: infinite;
+        animation: pc 1s steps(1) infinite;
         position: absolute;
         top: -14px;
         left: -43px;
     }
     .monitor {
-        animation-name: monitor;
-        animation-duration: 500ms;
-        animation-iteration-count: infinite;
+        animation: monitor 1s steps(1) infinite;
         position: absolute;
         top: -20px;
         left: 20px;
@@ -78,9 +68,7 @@
     }
     .employee {
         position: absolute;
-        animation-name: employee;
-        animation-duration: 600ms;
-        animation-iteration-count: infinite;
+        animation: employee 1s steps(1) infinite;
         top: -80px;
         left: 61px;
         z-index: 3;
@@ -100,10 +88,7 @@
         z-index: 1;
     }
     .coffee {
-        position: absolute;
-        animation-name: coffee;
-        animation-duration: 1000ms;
-        animation-iteration-count: infinite;
+        animation: coffee 1s steps(1) infinite;
         position: absolute;
         top: -32px;
         left: -15px;
@@ -127,19 +112,13 @@
             position: relative;
         }
         .flip-angle-90 {
-            img {
-                transform: rotate(90deg);
-            }
+            transform: rotate(90deg);
         }
         .flip-angle-180 {
-            img {
-                transform: rotate(180deg);
-            }
+            transform: rotate(180deg);
         }
         .flip-angle-minus-90 {
-            img {
-                transform: rotate(-90deg);
-            }
+            transform: rotate(-90deg);
         }
     }
 }
