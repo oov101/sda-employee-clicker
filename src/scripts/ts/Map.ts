@@ -25,22 +25,50 @@ export class Map {
   renderMap() {
     for(let c = 0, x = 0; c < this.cols; c++, x += this.tsize) {
       for(let r = 0, y = 0; r < this.rows; r++, y += this.tsize) {
-        this.renderFloor(x, y, 'floor-1');
-        this.renderWalls();
+        this.renderElement(x, y, 'floor-1');
+        this.renderCorners(c, r, () => {return this.renderElement(x, y, 'wall-corner-1')});
       }
     }
   }
 
-  renderFloor(x: number, y: number, floorType: string) {
-    const floor = document.createElement('div');
-    floor.setAttribute('class', `sprite ${floorType}`);
-    floor.style.position = 'absolute';
-    floor.style.top = `${y}px`;
-    floor.style.left = `${x}px`;
-    this.mapContainer.appendChild(floor);
+  renderCorners(c: number, r: number, renderElement: Function) {
+    if (c === 0 && r === 0) {
+      this.moveElement(renderElement(), -44, -44);
+    }
+    
+    if (c === this.cols - 1 && r === 0) {
+      this.moveElement(renderElement(), 44, -44, 90);
+    }
+
+    if (c === 0 && r === this.rows - 1) {
+      this.moveElement(renderElement(), -44, 44, -90);
+    }
+    
+    if (c === this.cols - 1 && r === this.rows - 1) {
+      this.moveElement(renderElement(), 44, 44, 180);
+    }
   }
 
   renderWalls() {
 
+  }
+
+  
+  renderElement(x: number, y: number, sprite: string): Element {
+    const element = document.createElement('div');
+    element.setAttribute('class', `sprite ${sprite}`);
+    element.style.position = 'absolute';
+    element.style.top = `${y}px`;
+    element.style.left = `${x}px`;
+    this.mapContainer.appendChild(element);
+    return element;
+  }
+  
+  moveElement(element: HTMLElement, left?: number, top?: number, rotateAngle?: number) {
+    element.style.transform = `rotate(${rotateAngle}deg)`;
+    // @ts-ignore error: possibly null
+    element.style.top = `${Number(element.style.top.match(/\d+/g)[0]) + top}px`;
+    // @ts-ignore error: possibly null
+    element.style.left = `${Number(element.style.left.match(/\d+/g)[0]) + left}px`;
   }
 }
