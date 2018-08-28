@@ -1,81 +1,81 @@
 @keyframes employee {
   0% {
-      background-image: url('../../../public/assets/sprites/employee/employee20.png');
+    background-position: -143px -143px;
   }
   20% {
-      background-image: url('../../../public/assets/sprites/employee/employee21.png');
+    background-position: -281px -143px;
   }
   40% {
-      background-image: url('../../../public/assets/sprites/employee/employee22.png');
+    background-position: -419px -143px;
   }
   60% {
-      background-image: url('../../../public/assets/sprites/employee/employee23.png');
+    background-position: -557px -143px;
   }
   80% {
-      background-image: url('../../../public/assets/sprites/employee/employee24.png');
+    background-position: -695px -143px;
   }
   100% {
-      background-image: url('../../../public/assets/sprites/employee/employee25.png');
+    background-position: -5px -281px;
   }
 }
 
 @keyframes coffee {
   0% {
-      background-image: url('../../../public/assets/sprites/coffee/coffee0.png');
+    background-position: -281px -5px;
   }
 
   30% {
-      background-image: url('../../../public/assets/sprites/coffee/coffee1.png');
+    background-position: -419px -5px;
   }
 
   50% {
-      background-image: url('../../../public/assets/sprites/coffee/coffee2.png');
+    background-position: -557px -5px;
   }
 
   70% {
-      background-image: url('../../../public/assets/sprites/coffee/coffee3.png');
+    background-position: -695px -5px;
   }
 
   100% {
-      background-image: url('../../../public/assets/sprites/coffee/coffee4.png');
+    background-position: -5px -143px;
   }
 }
 
 @keyframes monitor {
   0% {
-      background-image: url('../../../public/assets/sprites/monitor/monitor0.png');
+    background-position: -419px -557px;
   }
   20% {
-      background-image: url('../../../public/assets/sprites/monitor/monitor1.png');
+    background-position: -557px -557px;
   }
   40% {
-      background-image: url('../../../public/assets/sprites/monitor/monitor2.png');
+    background-position: -695px -557px;
   }
   60% {
-      background-image: url('../../../public/assets/sprites/monitor/monitor3.png');
+    background-position: -5px -695px;
   }
   80% {
-      background-image: url('../../../public/assets/sprites/monitor/monitor4.png');
+    background-position: -143px -695px;
   }
   100% {
-      background-image: url('../../../public/assets/sprites/monitor/monitor0.png');
+    background-position: -419px -557px;
   }
 }
 
 @keyframes pc {
   0% {
-      background-image: url('../../../public/assets/sprites/pc/pc0.png');
+    background-position: -281px -695px;
   }
   25% {
-      background-image: url('../../../public/assets/sprites/pc/pc1.png');
+    background-position: -419px -695px;
   }
   50% {
-      background-image: url('../../../public/assets/sprites/pc/pc2.png');
+    background-position: -557px -695px;
   }
   75% {
-      background-image: url('../../../public/assets/sprites/pc/pc3.png');
+    background-position: -695px -695px;
   }
   100% {
-      background-image: url('../../../public/assets/sprites/pc/pc0.png');
+    background-position: -281px -695px;
   }
 }
