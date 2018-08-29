@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "concurrently \"npm:copy-requirejs\" \"tsc\" \"node-sass src/styles/sass/ -o src/styles/css/\"",
+    "postinstall": "concurrently \"npm:copy-requirejs\" \"atlas\" \"tsc\" \"node-sass src/styles/sass/ -o src/styles/css/\"",
     "copy-requirejs": "copyfiles --flat node_modules/requirejs/require.js src/scripts/libs",
     "start": "concurrently \"npm:sass\" \"npm:tsc\"",
     "sass": "node-sass -w src/styles/sass/ -o src/styles/css/",
-    "tsc": "tsc -w"
+    "tsc": "tsc -w",
+    "atlas": "node sprite-generator.js"
   },
   "keywords": [],
   "author": "",
