@@ -92,6 +92,7 @@ Thumbs.db
 
 # CSS
 main.css
+atlas.css
 
 # JS
 main.js
@@ -99,3 +100,6 @@ main.js
 
 # RequireJS
 require.js
+
+# Atlas png
+atlas.png
