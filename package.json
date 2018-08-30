@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "concurrently \"npm:copy-requirejs\" \"atlas\" \"tsc\" \"node-sass src/styles/sass/ -o src/styles/css/\"",
-    "copy-requirejs": "copyfiles --flat node_modules/requirejs/require.js src/scripts/libs",
-    "start": "concurrently \"npm:sass\" \"npm:tsc\"",
-    "sass": "node-sass -w src/styles/sass/ -o src/styles/css/",
+    "postinstall": "concurrently \"npm:copy-requirejs\" \"npm:atlas\" \"tsc\" \"node-sass src/styles/sass/ -o public/styles/\"",
+    "copy-requirejs": "copyfiles --flat node_modules/requirejs/require.js public/scripts/libs",
+    "start": "concurrently \"npm:sass\" \"npm:tsc\" \"npm:server\"",
+    "sass": "node-sass -w src/styles/sass/ -o public/styles/",
     "tsc": "tsc -w",
-    "atlas": "node sprite-generator.js"
+    "atlas": "node sprite-generator.js",
+    "server": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "concurrently": "^3.6.1",
     "copyfiles": "^2.0.0",
+    "express": "^4.16.3",
     "jimp": "^0.3.9",
     "node-sass": "^4.9.3",
     "node-sprite-generator": "^0.10.2",
