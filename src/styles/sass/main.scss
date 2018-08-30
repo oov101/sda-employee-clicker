@@ -1,6 +1,14 @@
 .map {
     position: relative;
 
+    .coffee {
+        transform: scale(0.5);
+    }
+
+    .pizza-1 {
+        transform: scale(0.7) rotate(20deg);
+    }
+
     div {
         position: absolute;
     }

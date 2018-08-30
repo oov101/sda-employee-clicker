@@ -2,6 +2,8 @@ interface MapElement {
   name: string;
   x: number;
   y: number;
+  width: number;
+  height: number;
   rotate?: number;
 }
 
@@ -27,10 +29,11 @@ export class Map {
       div.setAttribute('class', `${element.name}`);
       div.style.setProperty('top', `${element.y}px`);
       div.style.setProperty('left', `${element.x}px`);
+
       if (element.rotate) {
-        div.style.setProperty('transform-orgin', '39% 50%' )
         div.style.setProperty('transform', `rotate(${element.rotate}deg)`);
       }
+
       this.mapContainer.appendChild(div);
     });
   }
