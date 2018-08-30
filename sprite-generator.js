@@ -2,12 +2,12 @@ var nsg = require('node-sprite-generator');
 
 nsg({
     src: [
-        'public/assets/sprites/**/*.png'
+        'src/assets/sprites/**/*.png'
     ],
     compositor: 'jimp',
     stylesheet: 'css',
     spritePath: 'public/assets/atlas.png',
-    stylesheetPath: 'src/styles/css/atlas.css',
+    stylesheetPath: 'public/styles/atlas.css',
 }, function (err) {
     console.log('Sprite generated!');
 });
