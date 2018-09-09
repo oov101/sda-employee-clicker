@@ -1,7 +1,9 @@
+import { Map } from 'Map';
 import { Employee } from 'Employee';
 import { CoffeeUpgrade } from 'CoffeeUpgrade';
 
 export class EmployeeClicker {
+    map!: Map;
     score: number;
     scoreListeners: Function[];
     employees: Employee[];
@@ -19,8 +21,8 @@ export class EmployeeClicker {
     }
 
     init() {
-        const employeeDiv = document.getElementsByClassName('employee')[0]
-        this.employees = [new Employee(employeeDiv, this)];
+        this.map = new Map();
+        this.employees = [new Employee(this)];
         this.monitor = document.getElementsByClassName('monitor')[0];
         this.pc = document.getElementsByClassName('pc')[0];
         this.coffee = document.getElementsByClassName('coffee')[0];
